@@ -1,0 +1,555 @@
+/* ============================================================
+   VERTEX GROUP — Hoja de estilos base
+   Sprint II · Integrante 1: Estructura HTML5 + identidad base
+   Los estilos de componentes avanzados (cards, carrusel,
+   formularios, alertas, Bootstrap) se completan en la fase de
+   Desarrollo de Interfaz (punto 2 de la ruta de trabajo).
+   ============================================================ */
+
+/* ---------- 1. Variables institucionales ---------- */
+:root {
+  /* Paleta — Manual de Marca, sección 4.5 */
+  --azul-principal: #007BFF;   /* Innovación, tecnología */
+  --morado: #8A2BE2;           /* Creatividad, imaginación */
+  --azul-oscuro: #001F5B;      /* Solidez, profesionalismo */
+  --gris: #E0E0E0;             /* Equilibrio, neutralidad */
+  --negro: #000000;            /* Elegancia, contraste */
+  --blanco: #FFFFFF;           /* Pureza, claridad */
+
+  --gradiente-marca: linear-gradient(135deg, var(--azul-principal), var(--morado));
+
+  /* Tipografía */
+  --fuente-titulos: 'Sora', sans-serif;
+  --fuente-texto: 'Inter', sans-serif;
+  --fuente-mono: 'JetBrains Mono', monospace;
+
+  /* Espaciado */
+  --espacio-seccion: clamp(3rem, 6vw, 6rem);
+  --ancho-maximo: 1180px;
+}
+
+/* ---------- 2. Reset básico ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fuente-texto);
+  color: var(--negro);
+  background-color: var(--blanco);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fuente-titulos);
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-maximo);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Utilidad para saltar al contenido (accesibilidad) */
+.saltar-enlace {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--negro);
+  color: var(--blanco);
+  padding: 0.75rem 1rem;
+  z-index: 100;
+}
+
+.saltar-enlace:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* Foco visible para navegación por teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--azul-principal);
+  outline-offset: 2px;
+}
+
+/* ---------- 3. Encabezado / Navegación ---------- */
+.encabezado {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--gris);
+}
+
+.barra-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1rem;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo__marca {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 1.6rem;
+  background: var(--gradiente-marca);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.02em;
+}
+
+.logo__grupo {
+  font-family: var(--fuente-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  color: var(--azul-oscuro);
+  margin-top: 2px;
+}
+
+.nav-principal {
+  display: flex;
+  gap: 2rem;
+  font-family: var(--fuente-mono);
+  font-size: 0.9rem;
+}
+
+.nav-principal a {
+  color: var(--azul-oscuro);
+  transition: color 0.2s ease;
+}
+
+.nav-principal a:hover,
+.nav-principal a[aria-current="page"] {
+  color: var(--azul-principal);
+}
+
+.nav-acciones {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+}
+
+.nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--negro);
+}
+
+/* ---------- 4. Botones ---------- */
+.boton {
+  display: inline-block;
+  font-family: var(--fuente-mono);
+  font-size: 0.9rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  text-align: center;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+}
+
+.boton--primario {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+.boton--primario:hover {
+  opacity: 0.85;
+}
+
+.boton--secundario {
+  background-color: var(--blanco);
+  color: var(--negro);
+  border-color: var(--negro);
+}
+
+.boton--secundario:hover {
+  background-color: var(--gris);
+}
+
+.boton--degradado {
+  background: var(--gradiente-marca);
+  color: var(--blanco);
+}
+
+/* ---------- 5. Hero (Home) ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--espacio-seccion);
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+}
+
+.hero__fondo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.1vw;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.hero__forma {
+  border-radius: 50%;
+  filter: blur(22px);
+  flex-shrink: 0;
+}
+
+.hero__contenido {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+}
+
+.hero__titulo {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  margin-bottom: 1.25rem;
+}
+
+.hero__texto {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 2rem;
+  max-width: 55ch;
+}
+
+.hero__acciones {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- 6. Secciones genéricas ---------- */
+.seccion {
+  padding-block: var(--espacio-seccion);
+}
+
+.seccion--alterna {
+  background-color: #FAFBFF;
+}
+
+.seccion__cabecera {
+  max-width: 640px;
+  margin-bottom: 2.5rem;
+}
+
+.seccion__cabecera h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  margin-bottom: 0.75rem;
+}
+
+.seccion__cabecera p {
+  color: #444;
+}
+
+/* ---------- 7. Rejillas y tarjetas base ---------- */
+.rejilla {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.rejilla--2 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.rejilla--3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.rejilla--4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+.tarjeta {
+  background: var(--blanco);
+  border: 1px solid var(--gris);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.tarjeta:hover {
+  box-shadow: 0 12px 30px rgba(0, 31, 91, 0.08);
+  transform: translateY(-3px);
+}
+
+.tarjeta__icono {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: var(--gradiente-marca);
+  margin-bottom: 1rem;
+}
+
+.tarjeta h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.tarjeta p {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* ---------- 8. Formularios ---------- */
+.formulario {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 560px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.campo label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+  font-family: var(--fuente-texto);
+  padding: 0.75rem 0.9rem;
+  border: 1.5px solid var(--gris);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+  border-color: var(--azul-principal);
+}
+
+/* ---------- 9. Tablas ---------- */
+.tabla-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--gris);
+}
+
+thead th {
+  background-color: var(--azul-oscuro);
+  color: var(--blanco);
+}
+
+/* ---------- 10. FAQ ---------- */
+.faq-item {
+  border-bottom: 1px solid var(--gris);
+  padding-block: 1.1rem;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.05rem;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  float: right;
+  font-size: 1.3rem;
+  color: var(--azul-principal);
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item p {
+  margin-top: 0.75rem;
+  color: #444;
+}
+
+/* ---------- 11. Blog ---------- */
+.entrada-blog {
+  border: 1px solid var(--gris);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.entrada-blog img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.entrada-blog__cuerpo {
+  padding: 1.25rem;
+}
+
+.entrada-blog__meta {
+  font-family: var(--fuente-mono);
+  font-size: 0.75rem;
+  color: var(--morado);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 12. Alertas ---------- */
+.alerta {
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--azul-principal);
+  background-color: #EAF3FF;
+  font-size: 0.95rem;
+  margin-block: 1.5rem;
+}
+
+.alerta--exito {
+  border-color: #1FA97F;
+  background-color: #E9F9F2;
+}
+
+/* ---------- 13. Footer institucional ---------- */
+.pie {
+  background-color: var(--azul-oscuro);
+  color: var(--blanco);
+  padding-block: 3rem 1.5rem;
+}
+
+.pie__rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.pie h4 {
+  font-family: var(--fuente-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  color: var(--gris);
+}
+
+.pie ul li {
+  margin-bottom: 0.6rem;
+}
+
+.pie a {
+  color: #CDD8F0;
+  font-size: 0.9rem;
+}
+
+.pie a:hover {
+  color: var(--blanco);
+}
+
+.pie__inferior {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #A9B7D6;
+}
+
+.pie__redes {
+  display: flex;
+  gap: 1rem;
+}
+
+/* ---------- 14. Responsive ---------- */
+@media (max-width: 860px) {
+  .nav-principal {
+    position: fixed;
+    inset: 72px 0 auto 0;
+    background: var(--blanco);
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--gris);
+    transform: translateY(-120%);
+    transition: transform 0.25s ease;
+  }
+
+  .nav-principal.abierto {
+    transform: translateY(0);
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .hero {
+    text-align: left;
+    min-height: auto;
+  }
+
+  .hero__fondo {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
