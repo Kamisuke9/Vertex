@@ -1,0 +1,122 @@
+//acá asumo que se incluye el degradado corporativo llamado a la acción (CTA) y la grilla Tarjetas (Cards) que destaquen las soluciones de la empresa//.
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vertex Group - Inicio</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Estilos globales desarrollados por el Integrante 2 -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR (Integración general) -->
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark style-dark-blue shadow-sm bg-dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+          <img src="img/logo-white.png" alt="Vertex Group" height="40">[cite: 1]
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto text-uppercase small">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+    <!-- HERO BANNER -->
+    <section class="hero-banner text-white text-center py-5" style="background: linear-gradient(135deg, #001F5B 0%, #8A2BE2 100%);">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h1 class="display-3 fw-bold mb-3">Innovación Digital y Soluciones Tecnológicas</h1>
+            <p class="lead mb-4 opacity-90">Transformamos ideas complejas en software robusto, experiencias inmersivas y arquitecturas digitales de alto rendimiento.</p>
+            <div class="d-flex justify-content-center gap-3">
+              <a href="servicios.html" class="btn btn-primary btn-lg px-4 shadow">Explorar Servicios</a>
+              <a href="contacto.html" class="btn btn-outline-light btn-lg px-4">Contactar Ahora</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE SERVICIOS DESTACADOS (CARDS) -->
+    <section class="py-5 bg-light">
+      <div class="container py-4">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold text-uppercase" style="color: #001F5B;">Nuestras Áreas de Especialización</h2>
+          <div class="mx-auto" style="width: 60px; height: 3px; background-color: #007BFF;"></div>[cite: 1]
+        </div>
+
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-md-4">
+            <article class="card h-100 border-0 shadow-sm transition-hover">
+              <div class="card-body text-center p-4">
+                <div class="icon-box mb-3 text-primary">
+                  <i class="bi bi-code-slash display-4" style="color: #007BFF;"></i>[cite: 1]
+                </div>
+                <h3 class="h5 card-title fw-bold">Desarrollo de Software</h3>
+                <p class="card-text text-muted">Construcción de plataformas web, móviles y arquitecturas en la nube adaptadas a sus procesos clave.</p>
+              </div>
+              <div class="card-footer bg-transparent border-0 text-center pb-4">
+                <a href="servicios.html" class="btn btn-sm btn-outline-primary fw-bold">Ver Detalles</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-4">
+            <article class="card h-100 border-0 shadow-sm transition-hover">
+              <div class="card-body text-center p-4">
+                <div class="icon-box mb-3" style="color: #8A2BE2;">[cite: 1]
+                  <i class="bi bi-headset-vr display-4"></i>
+                </div>
+                <h3 class="h5 card-title fw-bold">Realidad Extendida (XR)</h3>
+                <p class="card-text text-muted">Desarrollo de experiencias inmersivas y simulaciones avanzadas para capacitación e interacción.</p>
+              </div>
+              <div class="card-footer bg-transparent border-0 text-center pb-4">
+                <a href="servicios.html" class="btn btn-sm btn-outline-primary fw-bold">Ver Detalles</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-4">
+            <article class="card h-100 border-0 shadow-sm transition-hover">
+              <div class="card-body text-center p-4">
+                <div class="icon-box mb-3" style="color: #001F5B;">[cite: 1]
+                  <i class="bi bi-cpu display-4"></i>
+                </div>
+                <h3 class="h5 card-title fw-bold">Simulación y Modelado</h3>
+                <p class="card-text text-muted">Modelos computacionales de alta precisión para la optimización de procesos industriales e ingenieriles.</p>
+              </div>
+              <div class="card-footer bg-transparent border-0 text-center pb-4">
+                <a href="servicios.html" class="btn btn-sm btn-outline-primary fw-bold">Ver Detalles</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
