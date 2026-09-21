@@ -1,0 +1,108 @@
+//acá está la estructura de cuerpo corporativo (Historia, misión, valores) utilizando un diseño moderno de tarjetas y cuadrículas.
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vertex Group - Nosotros</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- BANNER ENCABEZADO -->
+  <header class="bg-dark text-white py-5" style="background-color: #001F5B !important;">[cite: 1]
+    <div class="container text-center py-3">
+      <h1 class="fw-bold display-4">Sobre Vertex Group</h1>
+      <p class="lead opacity-75">Conoce nuestra trayectoria, valores e impulso innovador.</p>
+    </div>
+  </header>
+
+  <main class="py-5">
+    <!-- HISTORIA DE LA EMPRESA -->
+    <section class="container mb-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <h2 class="fw-bold mb-3" style="color: #001F5B;">Nuestra Historia</h2>[cite: 1]
+          <p class="text-muted">Vertex Group nació con la visión de cerrar la brecha entre la complejidad tecnológica y las soluciones del mundo real. A lo largo de los años, nos hemos posicionado como un referente en consultoría, simulación avanzada y desarrollo de soluciones de Realidad Extendida (XR).</p>
+          <p class="text-muted">Nuestro equipo multidisciplinario combina experiencia técnica sólida con un enfoque orientado a la resolución creativa de problemas, garantizando resultados confiables y escalables.</p>
+        </div>
+        <div class="col-lg-6">
+          <img src="img/about-team.jpg" alt="Equipo Vertex Group" class="img-fluid rounded shadow-lg">
+        </div>
+      </div>
+    </section>
+
+    <!-- MISIÓN Y VISIÓN -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Misión -->
+          <div class="col-md-6">
+            <div class="p-4 bg-white rounded shadow-sm h-100 border-start border-4 border-primary">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-bullseye fs-1 me-3" style="color: #007BFF;"></i>[cite: 1]
+                <h3 class="h4 mb-0 fw-bold">Misión</h3>
+              </div>
+              <p class="text-muted mb-0">Proveer soluciones tecnológicas e inmersivas de vanguardia que impulsen el crecimiento, optimicen los procesos operativos y aceleren la transformación digital de nuestros clientes de manera sostenible.</p>
+            </div>
+          </div>
+          <!-- Visión -->
+          <div class="col-md-6">
+            <div class="p-4 bg-white rounded shadow-sm h-100 border-start border-4" style="border-color: #8A2BE2 !important;">[cite: 1]
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-eye-fill fs-1 me-3" style="color: #8A2BE2;"></i>[cite: 1]
+                <h3 class="h4 mb-0 fw-bold">Visión</h3>
+              </div>
+              <p class="text-muted mb-0">Ser reconocidos internacionalmente como un socio tecnológico estratégico de referencia en la implementación de entornos interactivos, simulación avanzada e ingeniería de software.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALORES INSTITUCIONALES -->
+    <section class="container py-5">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="color: #001F5B;">Nuestros Valores</h2>[cite: 1]
+        <p class="text-muted">Principios que guían nuestro trabajo diario.</p>
+      </div>
+
+      <div class="row g-4 text-center">
+        <div class="col-6 col-md-3">
+          <div class="p-3 border rounded bg-white shadow-sm h-100">
+            <i class="bi bi-lightbulb-fill fs-1 text-warning mb-2"></i>
+            <h4 class="h6 fw-bold">Innovación</h4>
+            <p class="small text-muted mb-0">Búsqueda constante de soluciones creativas.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 border rounded bg-white shadow-sm h-100">
+            <i class="bi bi-shield-check fs-1 text-success mb-2"></i>
+            <h4 class="h6 fw-bold">Integridad</h4>
+            <p class="small text-muted mb-0">Compromiso y transparencia con nuestros clientes.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 border rounded bg-white shadow-sm h-100">
+            <i class="bi bi-trophy-fill fs-1 text-primary mb-2"></i>
+            <h4 class="h6 fw-bold">Excelencia</h4>
+            <p class="small text-muted mb-0">Calidad superior en cada línea de código.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 border rounded bg-white shadow-sm h-100">
+            <i class="bi bi-people-fill fs-1 text-info mb-2"></i>
+            <h4 class="h6 fw-bold">Colaboración</h4>
+            <p class="small text-muted mb-0">Trabajo en equipo para potenciar resultados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
