@@ -7,10 +7,10 @@
   <meta name="description" content="Conoce la trayectoria, misión, visión y valores de Vertex Group.">
 
   <link rel="icon" href="img/logo/favicon.jpg" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/tipografia.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -19,33 +19,31 @@
 
   <!-- ================= ENCABEZADO ================= -->
   <header class="encabezado">
-  <div class="contenedor barra-nav">
-    <a href="index.html" class="logo" aria-label="Vertex Group, ir al inicio">
-      <span class="logo__marca">VERTEX</span>
-      <span class="logo__grupo">GROUP</span>
-    </a>
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="nav-principal" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="faq.html">FAQ</a>
-      <a href="blog.html">Blog</a>
-    </nav>
-    <div class="nav-acciones">
-      <a href="contacto.html" class="boton boton--primario">Contáctanos</a>
+    <div class="contenedor barra-nav">
+      <a href="index.html" class="logo" aria-label="Vertex Group, ir al inicio">
+      <img src="img/logo/logo_principal.png" alt="Vertex Group" class="logo-img">
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-principal" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html" aria-current="page">Nosotros</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="faq.html">FAQ</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+      <div class="nav-acciones">
+        <a href="contacto.html" class="btn btn-primary boton--primario">Contáctanos</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
   <!-- ================= CONTENIDO ================= -->
   <main id="contenido-principal">
 
-    <!-- ENCABEZADO DE PÁGINA -->
     <section class="seccion seccion--alterna" style="padding-top: 160px; padding-bottom: 60px;">
-      <div class="contenedor text-center">
+      <div class="container text-center">
         <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem;">Sobre Vertex Group</h1>
         <p style="color: var(--texto-gris); font-size: 1.15rem;">
           Conoce nuestra trayectoria, valores e impulso innovador.
@@ -53,13 +51,13 @@
       </div>
     </section>
 
-         <!-- HISTORIA -->
+    <!-- HISTORIA -->
     <section class="seccion">
-      <div class="contenedor">
-        <div class="historia-flex">
+      <div class="container">
+        <div class="row align-items-center g-4">
 
           <!-- COLUMNA DE TEXTO -->
-          <div class="historia-texto">
+          <div class="col-lg-6 historia-texto">
             <h2>Nuestra Historia</h2>
             <p>
               Vertex Group nació con la visión de cerrar la brecha entre la complejidad tecnológica y las soluciones del mundo real. A lo largo de los años, nos hemos posicionado como un referente en consultoría, simulación avanzada y desarrollo de soluciones de Realidad Extendida (XR).
@@ -67,16 +65,16 @@
             <p>
               Nuestro equipo multidisciplinario combina experiencia técnica sólida con un enfoque orientado a la resolución creativa de problemas, garantizando resultados confiables y escalables.
             </p>
-            <a href="index.html" class="boton boton--secundario">Volver al Inicio</a>
+            <a href="index.html" class="btn btn-outline-light boton--secundario">Volver al Inicio</a>
           </div>
 
           <!-- COLUMNA DE IMAGEN -->
-     <div class="logo-historia-wrapper" style="background: var(--superficie-2); border-radius: 12px; padding: 1.5rem; box-shadow: 0 8px 40px rgba(0, 123, 255, 0.25);">
-        <img 
-            src="img/logo/favicon.jpg" 
-    alt="Logotipo de Vertex Group" 
-    class="logo-historia">
-      </div>
+          <div class="col-lg-6 logo-historia-wrapper" style="background: var(--superficie-2); border-radius: 12px; padding: 1.5rem; box-shadow: 0 8px 40px rgba(0, 123, 255, 0.25);">
+            <img 
+              src="img/logo/favicon.jpg" 
+              alt="Logotipo de Vertex Group" 
+              class="logo-historia img-fluid">
+          </div>
 
         </div>
       </div>
@@ -84,29 +82,31 @@
 
     <!-- MISIÓN Y VISIÓN -->
     <section class="seccion seccion--alterna">
-      <div class="contenedor">
-        <div class="rejilla rejilla--2">
+      <div class="container">
+        <div class="row g-4">
 
-          <!-- Misión -->
-          <div class="tarjeta" style="border-left: 4px solid var(--azul-principal);">
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-              <i class="bi bi-bullseye" style="font-size: 2.5rem; color: var(--azul-principal);"></i>
-              <h3 style="margin: 0; font-size: 1.4rem;">Misión</h3>
+          <div class="col-md-6">
+            <div class="tarjeta h-100" style="border-left: 4px solid var(--azul-principal);">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <i class="bi bi-bullseye" style="font-size: 2.5rem; color: var(--azul-principal);"></i>
+                <h3 class="m-0" style="font-size: 1.4rem;">Misión</h3>
+              </div>
+              <p>
+                Proveer soluciones tecnológicas e inmersivas de vanguardia que impulsen el crecimiento, optimicen los procesos operativos y aceleren la transformación digital de nuestros clientes de manera sostenible.
+              </p>
             </div>
-            <p>
-              Proveer soluciones tecnológicas e inmersivas de vanguardia que impulsen el crecimiento, optimicen los procesos operativos y aceleren la transformación digital de nuestros clientes de manera sostenible.
-            </p>
           </div>
 
-          <!-- Visión -->
-          <div class="tarjeta" style="border-left: 4px solid var(--morado);">
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-              <i class="bi bi-eye-fill" style="font-size: 2.5rem; color: var(--morado);"></i>
-              <h3 style="margin: 0; font-size: 1.4rem;">Visión</h3>
+          <div class="col-md-6">
+            <div class="tarjeta h-100" style="border-left: 4px solid var(--morado);">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <i class="bi bi-eye-fill" style="font-size: 2.5rem; color: var(--morado);"></i>
+                <h3 class="m-0" style="font-size: 1.4rem;">Visión</h3>
+              </div>
+              <p>
+                Ser reconocidos internacionalmente como un socio tecnológico estratégico de referencia en la implementación de entornos interactivos, simulación avanzada e ingeniería de software.
+              </p>
             </div>
-            <p>
-              Ser reconocidos internacionalmente como un socio tecnológico estratégico de referencia en la implementación de entornos interactivos, simulación avanzada e ingeniería de software.
-            </p>
           </div>
 
         </div>
@@ -115,32 +115,40 @@
 
     <!-- VALORES -->
     <section class="seccion">
-      <div class="contenedor">
-        <div class="seccion__cabecera" style="text-align: center; max-width: 100%; margin-bottom: 3rem;">
+      <div class="container">
+        <div class="seccion__cabecera text-center mx-auto" style="max-width: 100%; margin-bottom: 3rem;">
           <h2>Nuestros Valores</h2>
           <p>Principios que guían nuestro trabajo diario.</p>
         </div>
 
-        <div class="rejilla rejilla--4">
-          <div class="tarjeta" style="text-align: center;">
-            <i class="bi bi-lightbulb-fill" style="font-size: 2.5rem; color: #FFC107;"></i>
-            <h3 style="margin-top: 1rem;">Innovación</h3>
-            <p>Búsqueda constante de soluciones creativas.</p>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="tarjeta text-center h-100">
+              <i class="bi bi-lightbulb-fill" style="font-size: 2.5rem; color: #FFC107;"></i>
+              <h3 class="mt-3">Innovación</h3>
+              <p>Búsqueda constante de soluciones creativas.</p>
+            </div>
           </div>
-          <div class="tarjeta" style="text-align: center;">
-            <i class="bi bi-shield-check" style="font-size: 2.5rem; color: #1FA97F;"></i>
-            <h3 style="margin-top: 1rem;">Integridad</h3>
-            <p>Compromiso y transparencia con nuestros clientes.</p>
+          <div class="col-md-6 col-lg-3">
+            <div class="tarjeta text-center h-100">
+              <i class="bi bi-shield-check" style="font-size: 2.5rem; color: #1FA97F;"></i>
+              <h3 class="mt-3">Integridad</h3>
+              <p>Compromiso y transparencia con nuestros clientes.</p>
+            </div>
           </div>
-          <div class="tarjeta" style="text-align: center;">
-            <i class="bi bi-trophy-fill" style="font-size: 2.5rem; color: var(--azul-principal);"></i>
-            <h3 style="margin-top: 1rem;">Excelencia</h3>
-            <p>Calidad superior en cada línea de código.</p>
+          <div class="col-md-6 col-lg-3">
+            <div class="tarjeta text-center h-100">
+              <i class="bi bi-trophy-fill" style="font-size: 2.5rem; color: var(--azul-principal);"></i>
+              <h3 class="mt-3">Excelencia</h3>
+              <p>Calidad superior en cada línea de código.</p>
+            </div>
           </div>
-          <div class="tarjeta" style="text-align: center;">
-            <i class="bi bi-people-fill" style="font-size: 2.5rem; color: var(--morado);"></i>
-            <h3 style="margin-top: 1rem;">Colaboración</h3>
-            <p>Trabajo en equipo para potenciar resultados.</p>
+          <div class="col-md-6 col-lg-3">
+            <div class="tarjeta text-center h-100">
+              <i class="bi bi-people-fill" style="font-size: 2.5rem; color: var(--morado);"></i>
+              <h3 class="mt-3">Colaboración</h3>
+              <p>Trabajo en equipo para potenciar resultados.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -149,51 +157,55 @@
   </main>
 
   <!-- ================= FOOTER ================= -->
-  <!-- ================= FOOTER ================= -->
-<footer class="pie">
-  <div class="contenedor">
-    <div class="pie__rejilla">
-      <div>
-        <h4>Vertex Group</h4>
-        <p style="color:var(--texto-gris); font-size:0.9rem; line-height:1.6;">
-          Soluciones tecnológicas que impulsan tu negocio al siguiente nivel.
-        </p>
+  <footer class="pie">
+    <div class="container">
+      <div class="row pie__rejilla">
+        <div class="col-md-6 col-lg-4">
+          <h4>Vertex Group</h4>
+          <p style="color:var(--texto-gris); font-size:0.9rem; line-height:1.6;">
+            Soluciones tecnológicas que impulsan tu negocio al siguiente nivel.
+          </p>
+        </div>
+        <div class="col-md-6 col-lg-2">
+          <h4>Navegación</h4>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <h4>Soporte</h4>
+          <ul class="list-unstyled">
+            <li><a href="faq.html">Preguntas frecuentes</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <h4>Contacto</h4>
+          <ul class="list-unstyled">
+            <li><a href="mailto:contacto@vertexgroup.com">contacto@vertexgroup.com</a></li>
+            <li><a href="tel:+50325193270">+503 2519 3270</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h4>Navegación</h4>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="servicios.html">Servicios</a></li>
-          <li><a href="blog.html">Blog</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Soporte</h4>
-        <ul>
-          <li><a href="faq.html">Preguntas frecuentes</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contacto</h4>
-        <ul>
-          <li><a href="mailto:contacto@vertexgroup.com">contacto@vertexgroup.com</a></li>
-          <li><a href="tel:+50325193270">+503 2519 3270</a></li>
-        </ul>
+      <div class="pie__inferior row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">&copy; 2026 Vertex Group. Todos los derechos reservados.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+          <nav class="pie__redes justify-content-center justify-content-md-end">
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href="#" aria-label="X">X</a>
+          </nav>
+        </div>
       </div>
     </div>
-    <div class="pie__inferior">
-      <p>&copy; 2026 Vertex Group. Todos los derechos reservados.</p>
-      <nav class="pie__redes" aria-label="Redes sociales">
-        <a href="#" aria-label="LinkedIn">LinkedIn</a>
-        <a href="#" aria-label="Instagram">Instagram</a>
-        <a href="#" aria-label="X">X</a>
-      </nav>
-    </div>
-  </div>
-</footer>
+  </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

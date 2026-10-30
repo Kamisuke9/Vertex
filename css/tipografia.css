@@ -1,0 +1,30 @@
+/* ============================================================
+   VERTEX GROUP — Tipografía Institucional (Bootstrap 5)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400&display=swap');
+
+:root {
+  /* Sobrescribimos la fuente base de Bootstrap (Open Sans) */
+  --bs-font-sans-serif: 'Open Sans', sans-serif;
+  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-weight: 400;
+}
+
+/* Montserrat Bold para Títulos */
+h1, h2, h3, h4, h5, h6, .fw-bold, .font-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; 
+}
+
+/* Montserrat SemiBold para Subtítulos y Menú */
+.fw-semibold, .subtitle, .nav-link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600; 
+}
+
+/* Open Sans Regular para el cuerpo del texto */
+body, p, span, input, button, .form-control {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400; 
+}
