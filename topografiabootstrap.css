@@ -1,0 +1,25 @@
+/* 1. Importar las fuentes oficiales desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400&display=swap');
+
+/* 2. Sobrescribir las variables globales de tipografía de Bootstrap */
+:root {
+  --bs-font-sans-serif: 'Open Sans', sans-serif;
+  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-weight: 400;
+}
+
+/* 3. Aplicar Montserrat Bold y SemiBold a los encabezados y elementos destacados */
+h1, h2, h3, h4, h5, h6, .fw-bold, .font-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Montserrat Bold para títulos principales */
+}
+
+.fw-semibold, .subtitle, .nav-link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600; /* Montserrat SemiBold para subtítulos y elementos destacados */
+}
+
+body, p, span, input, button {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400; /* Open Sans Regular para el texto general */
+}
