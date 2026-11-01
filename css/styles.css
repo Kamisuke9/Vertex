@@ -207,7 +207,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .articulo-blog blockquote { padding: 1.5rem 2rem; background: var(--superficie-2); border-left: 4px solid var(--azul-principal); border-radius: 8px; margin: 2rem 0; }
 
 /* ---------- 12. Responsive (Solo Menú Móvil) ---------- */
-@media (max-width: 860px) {
+@media (max-width: 350px) {
   .nav-principal {
     position: fixed; inset: 76px 0 auto 0; background: var(--superficie-2);
     flex-direction: column; padding: 1.5rem; gap: 1.25rem;
