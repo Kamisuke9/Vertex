@@ -81,7 +81,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* ---------- 3. Encabezado / Navegación ---------- */
 .encabezado {
-  position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
   background: rgba(5, 7, 15, 0.85);
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(0, 123, 255, 0.15);
@@ -92,26 +92,36 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding-block: 1.25rem;
 }
 
-/* ---------- ESTILOS DEL LOGO EN IMAGEN ---------- */
+/* Estilos del Logo */
 .logo { 
   display: flex; 
   align-items: center; 
   flex-shrink: 0; 
-  margin-right: auto; /* Mantiene el logo a la izquierda y empuja el menú a la derecha */
+  margin-right: auto; 
 }
 
 .logo-img {
-  height: 45px; /* Ajusta este valor si quieres el logo más grande o pequeño */
+  height: 45px;
   width: auto;
   transition: transform 0.3s ease;
-  filter: drop-shadow(0 0 5px rgba(138, 43, 226, 0.4)); /* Resplandor morado sutil */
+  filter: drop-shadow(0 0 5px rgba(138, 43, 226, 0.4));
 }
 
 .logo:hover .logo-img {
-  transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+  transform: scale(1.05);
 }
 
-.nav-principal { display: flex; gap: 2.5rem; font-family: var(--fuente-texto); font-size: 0.95rem; font-weight: 500; }
+/* Navegación Base (Escritorio) */
+.nav-principal { 
+  display: flex; 
+  gap: 2.5rem; 
+  font-family: var(--fuente-texto); 
+  font-size: 0.95rem; 
+  font-weight: 500; 
+  margin-left: auto; 
+  margin-right: 2rem; 
+}
+
 .nav-principal a { color: var(--texto-gris); transition: color 0.2s ease; }
 .nav-principal a:hover, .nav-principal a[aria-current="page"] { color: var(--blanco); }
 
@@ -119,13 +129,28 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   display: flex; 
   align-items: center; 
   gap: 1rem; 
-  padding-left: 2rem; /* Da un poco de espacio entre el menú y el botón */
 }
 
-.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.4rem; }
-.nav-toggle span { width: 24px; height: 2px; background: var(--blanco); }
+/* Botón Hamburguesa */
+.nav-toggle { 
+  display: none; 
+  flex-direction: column; 
+  gap: 5px; 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  padding: 0.4rem; 
+  z-index: 1001;
+}
 
-/* ---------- 4. Botones (Combinados con Bootstrap) ---------- */
+.nav-toggle span { 
+  width: 24px; 
+  height: 2px; 
+  background: var(--blanco); 
+  transition: 0.3s;
+}
+
+/* ---------- 4. Botones ---------- */
 .btn.boton--primario {
   background: var(--gradiente-marca); border: none; color: var(--blanco);
   box-shadow: 0 4px 20px rgba(0, 123, 255, 0.25);
@@ -189,7 +214,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .accordion-button::after { filter: invert(1); }
 .accordion-body { background-color: var(--superficie-2); color: var(--texto-gris); padding: 1rem 1.5rem 1.5rem 1.5rem; font-size: 0.95rem; line-height: 1.7; }
 
-/* ---------- 10. Formularios (Solo estilos de Input) ---------- */
+/* ---------- 10. Formularios ---------- */
 .form-control, .form-select {
   background-color: var(--superficie-2); border: 1.5px solid rgba(0, 123, 255, 0.25); color: var(--blanco);
 }
@@ -206,16 +231,42 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .articulo-blog__imagen { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 40px rgba(0, 123, 255, 0.25); margin-bottom: 2rem; }
 .articulo-blog blockquote { padding: 1.5rem 2rem; background: var(--superficie-2); border-left: 4px solid var(--azul-principal); border-radius: 8px; margin: 2rem 0; }
 
-/* ---------- 12. Responsive (Solo Menú Móvil) ---------- */
-@media (max-width: 350px) {
+/* ============================================================
+   12. Responsive (Menú Móvil Corregido)
+   ============================================================ */
+@media (max-width: 860px) {
+  
+  /* Ocultamos el menú base de Bootstrap y le damos nuestra animación */
   .nav-principal {
-    position: fixed; inset: 76px 0 auto 0; background: var(--superficie-2);
-    flex-direction: column; padding: 1.5rem; gap: 1.25rem;
+    position: fixed !important; 
+    top: 76px;
+    left: 0; 
+    width: 100%; 
+    background: var(--superficie-2);
+    flex-direction: column; 
+    padding: 1.5rem; 
+    gap: 1.25rem;
     border-bottom: 1px solid rgba(0, 123, 255, 0.2);
-    transform: translateY(-120%); transition: transform 0.25s ease;
+    
+    /* Estado inicial: oculto */
+    transform: translateY(-150%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: 999; 
   }
-  .nav-principal.abierto { transform: translateY(0); }
-  .nav-toggle { display: flex; }
+
+  /* Cuando el JS quita el 'd-none' y pone 'abierto', se muestra */
+  .nav-principal.abierto { 
+    display: flex !important;
+    transform: translateY(0); 
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-toggle { 
+    display: flex; 
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -7,27 +7,18 @@
   <meta name="description" content="Vertex Group impulsa negocios a través de soluciones tecnológicas, consultoría digital y desarrollo de software a la medida.">
 
   <link rel="icon" href="img/logo/favicon.jpg" type="image/png">
-  
-  <!-- 1. Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- 2. Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  
-  <!-- 3. Tipografía Institucional (Montserrat y Open Sans) -->
   <link rel="stylesheet" href="css/tipografia.css">
-  
-  <!-- 4. Estilos Base (Colores, Modo Oscuro, etc.) -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
   <a href="#contenido-principal" class="saltar-enlace">Saltar al contenido principal</a>
 
-  <!-- ================= ENCABEZADO ================= -->
   <header class="encabezado">
     <div class="contenedor barra-nav">
-            <a href="index.html" class="logo" aria-label="Vertex Group, ir al inicio">
+      <a href="index.html" class="logo" aria-label="Vertex Group, ir al inicio">
         <img src="img/logo/logo_principal.png" alt="Vertex Group" class="logo-img">
       </a>
 
@@ -35,7 +26,8 @@
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="nav-principal" aria-label="Navegación principal">
+      <!-- Menú con clases de Bootstrap para evitar parpadeo -->
+      <nav class="nav-principal d-none d-lg-flex" aria-label="Navegación principal">
         <a href="index.html" aria-current="page">Inicio</a>
         <a href="nosotros.html">Nosotros</a>
         <a href="servicios.html">Servicios</a>
@@ -48,52 +40,32 @@
     </div>
   </header>
 
-  <!-- ================= SECCIÓN PRINCIPAL ================= -->
   <main id="contenido-principal">
-
     <section class="hero">
       <div class="container">
         <div class="row align-items-center">
-          
-          <!-- Columna de la Imagen -->
           <div class="col-lg-6 mb-4 mb-lg-0 text-center">
-            <img 
-              src="https://blogs.uoc.edu/informatica/wp-content/uploads/sites/153/2017/03/cx-picture-100608993-primary-idge_.jpg"
-              class="hero__imagen img-fluid"
-              alt="Soluciones informáticas"
-            >
+            <img src="https://blogs.uoc.edu/informatica/wp-content/uploads/sites/153/2017/03/cx-picture-100608993-primary-idge_.jpg" class="hero__imagen img-fluid" alt="Soluciones informáticas">
           </div>
-
-          <!-- Columna del Contenido -->
           <div class="col-lg-6 hero__contenido">
-            <h1 class="hero__titulo">
-              Soluciones tecnológicas al siguiente nivel
-            </h1>
-            <p class="hero__texto">
-              Vertex Group impulsa negocios a través de soluciones tecnológicas,
-              consultoría digital y desarrollo de software a la medida.
-            </p>
+            <h1 class="hero__titulo">Soluciones tecnológicas al siguiente nivel</h1>
+            <p class="hero__texto">Vertex Group impulsa negocios a través de soluciones tecnológicas, consultoría digital y desarrollo de software a la medida.</p>
             <div class="hero__acciones">
               <a href="contacto.html" class="btn btn-primary boton--primario">Solicitar información</a>
               <a href="servicios.html" class="btn btn-outline-light boton--secundario">Ver servicios</a>
             </div>
           </div>
-
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- ================= FOOTER ================= -->
   <footer class="pie">
     <div class="container">
       <div class="row pie__rejilla">
         <div class="col-md-6 col-lg-4">
           <h4>Vertex Group</h4>
-          <p style="color:var(--texto-gris); font-size:0.9rem; line-height:1.6;">
-            Soluciones tecnológicas que impulsan tu negocio al siguiente nivel.
-          </p>
+          <p style="color:var(--texto-gris); font-size:0.9rem; line-height:1.6;">Soluciones tecnológicas que impulsan tu negocio al siguiente nivel.</p>
         </div>
         <div class="col-md-6 col-lg-2">
           <h4>Navegación</h4>
@@ -134,8 +106,18 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const btn = document.querySelector(".nav-toggle");
+      const menu = document.querySelector(".nav-principal");
+      if (btn && menu) {
+        btn.addEventListener("click", function() {
+          menu.classList.remove("d-none"); /* Quita el oculto de Bootstrap */
+          menu.classList.toggle("abierto"); /* Aplica la animación */
+        });
+      }
+    });
+  </script>
 </body>
 </html>
